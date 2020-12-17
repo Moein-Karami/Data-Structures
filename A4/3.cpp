@@ -24,7 +24,6 @@ void dfs(int p, int x)
 
 void fix_up(int p, int x)
 {
-	//cerr << "X dp up : "<<x <<" "<< dp[x] << " "<<up[p]<<endl;
 	int max1 = 0, max2 = 0;
 	ans[x] = max(up[x], dp[x]);
 	mini = min(mini, ans[x]);
