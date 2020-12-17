@@ -14,9 +14,8 @@ int ans[MAXN];
 
 void dfs(int x)
 {
-	for (int i = 0; i < v[x].size(); i++)
+	for (auto u : v[x])
 	{
-		int u = v[x][i];
 		if (!ans[u])
 		{
 			ans[u] = 3 - ans[x];
@@ -31,6 +30,12 @@ int main()
 
 	int n, m;
 	cin >> n >> m;
+
+	if (m == 0)
+	{
+		cout << "NO";
+		return 0;
+	}
 
 	for (int i = 1; i <= m; i++)
 	{
@@ -52,7 +57,7 @@ int main()
 
 	for(int i = 0; i < m; i++)
 	{
-		if (ans[edges[i].f] == ans[edges[i].s] )
+		if (ans[edges[i].f] == ans[edges[i].s])
 		{
 			cout << "NO\n";
 			return 0;
@@ -62,6 +67,5 @@ int main()
 	cout << "YES\n";
 	for (int i = 0; i < m; i++)
 		cout << ans[edges[i].f] - 1;
-
 	return 0;
 }
