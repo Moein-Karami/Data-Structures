@@ -37,7 +37,7 @@ int32_t main()
 	// for (int i = 1; i <= len; i++)
 	// 	cout << b[i];
 	// cout << endl;
-	
+
 	for (int i = 1; i < m; i++)
 	{
 		if (d[i] + len >= d[i + 1])
